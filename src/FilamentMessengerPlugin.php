@@ -3,6 +3,7 @@
 namespace MarJose123\FilamentMessenger;
 
 use Filament\Contracts\Plugin;
+use Filament\Navigation\MenuItem;
 use Filament\Panel;
 
 class FilamentMessengerPlugin implements Plugin
@@ -19,7 +20,11 @@ class FilamentMessengerPlugin implements Plugin
 
     public function boot(Panel $panel): void
     {
-        //
+        $panel->userMenuItems([
+            'messenger' => MenuItem::make()
+                ->label(__('filament-messenger::messenger.navigation.label'))
+                ->icon(__('filament-messenger::messenger.navigation.icon')),
+        ]);
     }
 
     public static function make(): static

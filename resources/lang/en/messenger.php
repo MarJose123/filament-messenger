@@ -1,6 +1,9 @@
 <?php
 
-// translations for MarJose123/FilamentMessenger
 return [
-    //
+    'navigation' => [
+        'icon' => '',
+        'label' => 'Message',
+    ],
+
 ];
