@@ -2,7 +2,7 @@
 
 return [
     'navigation' => [
-        'icon' => '',
+        'icon' => 'heroicon-o-chat-bubble-left-right',
         'label' => 'Message',
     ],
 
