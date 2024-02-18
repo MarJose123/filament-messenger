@@ -2,12 +2,22 @@
 
 namespace MarJose123\FilamentMessenger\Models;
 
-use Chatify\Traits\UUID;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class MessengerMessages extends Model
 {
-    use UUID;
+    use HasFactory;
 
-    protected $table = 'ch_messages';
+    protected $fillable = [
+        'from_id',
+        'to_id',
+        'message',
+        'attachment',
+        'seen',
+    ];
+
+    protected $casts = [
+        'id' => 'string',
+    ];
 }
