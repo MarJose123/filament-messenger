@@ -4,7 +4,6 @@ namespace MarJose123\FilamentMessenger;
 
 class FilamentMessenger
 {
-
     protected function getAllowedFilesExtensions(): array
     {
         return config('messenger.attachments.allowed_files');
@@ -14,6 +13,4 @@ class FilamentMessenger
     {
         return config('messenger.attachments.allowed_images');
     }
-
-
 }
