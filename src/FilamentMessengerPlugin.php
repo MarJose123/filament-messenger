@@ -5,6 +5,9 @@ namespace MarJose123\FilamentMessenger;
 use Filament\Contracts\Plugin;
 use Filament\Navigation\MenuItem;
 use Filament\Panel;
+use Illuminate\Support\Facades\Blade;
+use Livewire\Livewire;
+use MarJose123\FilamentMessenger\Livewire\MessengerMenu;
 
 class FilamentMessengerPlugin implements Plugin
 {
@@ -15,16 +18,17 @@ class FilamentMessengerPlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        //
+        $panel
+            ->renderHook(
+                name: 'panels::user-menu.before',
+                hook: fn (): string => Blade::render('@livewire(\'messenger-menu\')')
+            );
     }
 
     public function boot(Panel $panel): void
     {
-        $panel->userMenuItems([
-            'messenger' => MenuItem::make()
-                ->label(__('filament-messenger::messenger.navigation.label'))
-                ->icon(__('filament-messenger::messenger.navigation.icon')),
-        ]);
+        Livewire::component('messenger-menu', MessengerMenu::class);
+
     }
 
     public static function make(): static
