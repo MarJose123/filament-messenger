@@ -3,7 +3,6 @@
 namespace MarJose123\FilamentMessenger;
 
 use Filament\Contracts\Plugin;
-use Filament\Navigation\MenuItem;
 use Filament\Panel;
 use Illuminate\Support\Facades\Blade;
 use Livewire\Livewire;
